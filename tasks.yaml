@@ -1,0 +1,31 @@
+includes:
+  - cleanup: ./tasks/cleanup.yaml
+  - create: ./tasks/create.yaml
+  - deploy: ./tasks/deploy.yaml
+  - publish: ./tasks/publish.yaml
+  - setup: ./tasks/setup.yaml
+
+tasks:
+  - name: create-packages
+    actions:
+      - task: create:packages
+  
+  - name: create-test-bundle
+    actions:
+      - task: create:test-bundle
+  
+  - name: deploy-test-bundle
+    actions:
+      - task: deploy:test-bundle
+  
+  - name: publish-packages
+    actions:
+      - task: publish:packages
+
+  - name: setup-cluster
+    actions:
+      - task: setup:k3d-test-cluster
+
+  - name: cleanup
+    actions:
+      - task: cleanup:destroy

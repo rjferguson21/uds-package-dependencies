@@ -1,0 +1,5 @@
+tasks:
+  - name: test-bundle
+    actions:
+      - description: Deploy the UDS test bundle
+        cmd: uds deploy bundle/uds-bundle-dependency-test-${UDS_ARCH}-*.tar.zst --confirm --no-progress

@@ -1,0 +1,8 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: minio-istio-exceptions
+  namespace: dev-minio
+spec:
+  mtls:
+    mode: PERMISSIVE

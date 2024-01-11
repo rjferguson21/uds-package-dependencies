@@ -1,0 +1,20 @@
+variables:
+  - name: TARGET_REPO
+    default: oci://ghcr.io/defenseunicorns/packages/uds
+  
+tasks:
+  - name: packages
+    description: Publish the Zarf dependency packages
+    actions:
+      - description: Create the dependency packages
+        cmd: |
+          for dependency in src/*/ ; do
+            zarf package create ${dependency} --confirm --no-progress --architecture=arm64 --skip-sbom
+            zarf package create ${dependency} --confirm --no-progress --architecture=amd64 --skip-sbom
+          done
+      - description: publish the dependency packages
+        cmd: |
+          for dependency in src/*/ ; do
+            zarf package publish zarf-package-dev-$(basename ${dependency})-arm64-*.tar.zst ${TARGET_REPO} --no-progress
+            zarf package publish zarf-package-dev-$(basename ${dependency})-amd64-*.tar.zst ${TARGET_REPO} --no-progress
+          done

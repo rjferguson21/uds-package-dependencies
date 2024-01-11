@@ -1,0 +1,14 @@
+tasks:
+  - name: test-bundle
+    description: Create the UDS test bundle
+    actions:
+      - task: packages
+      - cmd: uds create bundle --confirm --no-progress --architecture=${UDS_ARCH}
+
+  - name: packages
+    description: Create the Zarf dependency packages
+    actions:
+      - cmd: |
+          for dependency in src/*/ ; do
+            zarf package create ${dependency} --confirm --no-progress --architecture=${UDS_ARCH} --skip-sbom
+          done
