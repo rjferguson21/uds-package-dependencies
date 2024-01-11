@@ -4,6 +4,7 @@ includes:
   - deploy: ./tasks/deploy.yaml
   - publish: ./tasks/publish.yaml
   - setup: ./tasks/setup.yaml
+  - test: ./tasks/test.yaml
 
 tasks:
   - name: create-packages
@@ -25,6 +26,10 @@ tasks:
   - name: setup-cluster
     actions:
       - task: setup:k3d-test-cluster
+
+  - name: test-packages
+    actions:
+      - task: test:packages
 
   - name: cleanup
     actions:
