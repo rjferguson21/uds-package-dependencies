@@ -32,20 +32,3 @@ components:
                 name: redis-master-0
                 condition: Ready
                 namespace: dev-redis
-  - name: redis-secret
-    required: true
-    actions:
-      onDeploy:
-        before:
-          - cmd: kubectl get secret -n dev-redis redis --template='{{ index .data "redis-password" }}' | base64 -d
-            mute: true
-            setVariables:
-              - name: REDIS_PASSWORD
-                sensitive: true
-  - name: gitlab-redis-password
-    required: true
-    manifests:
-      - name: gitlab-redis
-        namespace: gitlab
-        files:
-          - secret.yaml

@@ -32,20 +32,3 @@ components:
                 name: postgresql-0
                 condition: Ready
                 namespace: dev-postgres
-  - name: postgres-secret
-    required: true
-    actions:
-      onDeploy:
-        before:
-          - cmd: kubectl get secret -n dev-postgres postgresql --template={{.data.password}} | base64 -d
-            mute: true
-            setVariables:
-              - name: POSTGRES_DB_PASSWORD
-                sensitive: true
-  - name: gitlab-postgres-password
-    required: true
-    manifests:
-      - name: gitlab-postgres
-        namespace: gitlab
-        files:
-          - secret.yaml
