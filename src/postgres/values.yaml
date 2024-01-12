@@ -1,6 +1,6 @@
 auth:
   username: gitlab
-  database: gitlabdb
+  database: ###ZARf_VAR_DB_NAME###
 
 commonLabels:
   uds/user: "1001"

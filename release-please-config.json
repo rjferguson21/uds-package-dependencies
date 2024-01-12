@@ -1,0 +1,49 @@
+{
+  "packages": {
+    "src/minio": {
+      "release-type": "simple",
+      "draft": false,
+      "changelog-path": "CHANGELOG-MINIO.md",
+      "changelog-sections": [
+        { "type": "feat", "section": "Features", "hidden": false },
+        { "type": "fix", "section": "Bug Fixes", "hidden": false },
+        { "type": "chore", "section": "Miscellaneous", "hidden": false }
+      ],
+      "versioning": "prerelease",
+      "extra-files": [
+        "bundle/uds-bundle.yaml",
+        "src/minio/zarf.yaml"
+      ]
+    },
+    "src/postgres": {
+      "release-type": "simple",
+      "draft": false,
+      "changelog-path": "CHANGELOG-POSTGRES.md",
+      "changelog-sections": [
+        { "type": "feat", "section": "Features", "hidden": false },
+        { "type": "fix", "section": "Bug Fixes", "hidden": false },
+        { "type": "chore", "section": "Miscellaneous", "hidden": false }
+      ],
+      "versioning": "prerelease",
+      "extra-files": [
+        "bundle/uds-bundle.yaml",
+        "src/postgres/zarf.yaml"
+      ]
+    },
+    "src/redis": {
+      "release-type": "simple",
+      "draft": false,
+      "changelog-path": "CHANGELOG-REDIS.md",
+      "changelog-sections": [
+        { "type": "feat", "section": "Features", "hidden": false },
+        { "type": "fix", "section": "Bug Fixes", "hidden": false },
+        { "type": "chore", "section": "Miscellaneous", "hidden": false }
+      ],
+      "versioning": "prerelease",
+      "extra-files": [
+        "bundle/uds-bundle.yaml",
+        "src/redis/zarf.yaml"
+      ]
+    }
+  }
+}
