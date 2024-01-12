@@ -20,18 +20,12 @@ jobs:
       - name: Environment setup
         uses: ./.github/actions/setup
     
-      - name: Iron Bank Login
-        run: zarf tools registry login -u "${{secrets.IRON_BANK_ROBOT_USERNAME}}" -p "${{secrets.IRON_BANK_ROBOT_PASSWORD}}" registry1.dso.mil
-    
       - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: dummy
           password: ${{ secrets.GITHUB_TOKEN }}
-    
-      - name: Create Packages
-        run: use run create-packages
     
       - name: Publish Packages
         run: uds run publish-packages

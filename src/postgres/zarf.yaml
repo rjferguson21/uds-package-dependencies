@@ -5,6 +5,10 @@ metadata:
   version: "12.6.6-0"
   architecture: amd64
 
+variables:
+  - name: DB_NAME
+    default: db
+
 components:
   - name: postgres-istio-exceptions
     required: true
