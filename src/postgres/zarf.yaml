@@ -8,6 +8,8 @@ metadata:
 variables:
   - name: DB_NAME
     default: db
+  - name: USERNAME
+    default: username
 
 components:
   - name: postgres-istio-exceptions

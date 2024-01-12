@@ -5,6 +5,13 @@ metadata:
   version: "5.0.13-0"
   architecture: amd64
 
+variables:
+  - name: BUCKETS
+    autoIndent: true
+    default: |
+      - name: abc
+      - name: def
+
 components:
   - name: minio-istio-exceptions
     required: true
