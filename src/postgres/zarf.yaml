@@ -8,7 +8,7 @@ metadata:
 variables:
   - name: DB_NAME
     default: db
-  - name: USERNAME
+  - name: DB_USERNAME
     default: username
 
 components:
