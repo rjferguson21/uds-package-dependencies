@@ -1,5 +1,5 @@
 auth:
-  username: ##ZARF_VAR_DB_USERNAME###
+  username: ###ZARF_VAR_DB_USERNAME###
   database: ###ZARF_VAR_DB_NAME###
 
 commonLabels:
