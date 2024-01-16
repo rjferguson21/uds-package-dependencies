@@ -13,20 +13,32 @@
     },
     "src/minio": {
       "extra-files": [
-        "bundle/uds-bundle.yaml",
-        "src/minio/zarf.yaml"
+        "src/minio/zarf.yaml",
+        {
+          "type": "yaml",
+          "path": "bundle/uds-bundle.yaml",
+          "jsonpath": "$.packages[0].ref"
+        }
       ]
     },
     "src/postgres": {
       "extra-files": [
-        "bundle/uds-bundle.yaml",
-        "src/postgres/zarf.yaml"
+        "src/postgres/zarf.yaml",
+        {
+          "type": "yaml",
+          "path": "bundle/uds-bundle.yaml",
+          "jsonpath": "$.packages[1].ref"
+        }
       ]
     },
     "src/redis": {
       "extra-files": [
-        "bundle/uds-bundle.yaml",
-        "src/redis/zarf.yaml"
+        "src/redis/zarf.yaml",
+        {
+          "type": "yaml",
+          "path": "bundle/uds-bundle.yaml",
+          "jsonpath": "$.packages[2].ref"
+        }
       ]
     }
   }
