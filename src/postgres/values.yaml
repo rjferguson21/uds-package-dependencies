@@ -1,0 +1,7 @@
+auth:
+  username: ###ZARF_VAR_DB_USERNAME###
+  database: ###ZARF_VAR_DB_NAME###
+
+commonLabels:
+  uds/user: "1001"
+  uds/group: "0"

@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: dev-postgres
+  # x-release-please-start-version
+  version: "0.0.0"
+  # x-release-please-end
+  architecture: amd64
+
+variables:
+  - name: DB_NAME
+    default: db
+  - name: DB_USERNAME
+    default: username
+
+components:
+  - name: postgres-istio-exceptions
+    required: true
+    manifests:
+      - name: istio-exceptions
+        files:
+          - "peerauth.yaml"
+  - name: postgres
+    required: true
+    charts:
+      - name: postgresql
+        version: 12.6.6
+        namespace: dev-postgres
+        url: https://charts.bitnami.com/bitnami
+        valuesFiles:
+          - "values.yaml"
+    images:
+      - docker.io/bitnami/postgresql:15.3.0-debian-11-r24
+    actions:
+      onDeploy:
+        after:
+          - wait:
+              cluster:
+                kind: Pod
+                name: postgresql-0
+                condition: Ready
+                namespace: dev-postgres

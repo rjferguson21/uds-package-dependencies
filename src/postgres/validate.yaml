@@ -1,0 +1,9 @@
+tasks:
+  - name: validate
+    actions:
+      - description:
+        wait:
+          cluster:
+            kind: StatefulSet
+            name: postgresql
+            namespace: dev-postgres

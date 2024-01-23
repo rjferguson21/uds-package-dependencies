@@ -1,0 +1,9 @@
+tasks:
+  - name: validate
+    actions:
+      - description:
+        wait:
+          cluster:
+            kind: Deployment
+            name: minio
+            namespace: dev-minio

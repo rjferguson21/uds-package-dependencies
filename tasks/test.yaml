@@ -1,0 +1,8 @@
+tasks:
+  - name: packages
+    description: Test Zarf dependency packages
+    actions:
+      - cmd: |
+          for dependency in src/*/ ; do
+            uds run -f ${dependency}/validate.yaml validate
+          done
