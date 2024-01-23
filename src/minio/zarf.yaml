@@ -2,7 +2,9 @@
 kind: ZarfPackageConfig
 metadata:
   name: dev-minio
-  version: "5.0.13-0"
+  # x-release-please-start-version
+  version: "0.0.0"
+  # x-release-please-end
   architecture: amd64
 
 variables:

@@ -1,45 +1,23 @@
 {
   "packages": {
     ".": {
-      "release-type": "simple",
-      "draft": false,
       "changelog-path": "CHANGELOG.md",
       "changelog-sections": [
         { "type": "feat", "section": "Features", "hidden": false },
         { "type": "fix", "section": "Bug Fixes", "hidden": false },
         { "type": "chore", "section": "Miscellaneous", "hidden": false }
       ],
-      "versioning": "prerelease"
-    },
-    "src/minio": {
+      "release-type": "simple",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": true,
+      "draft": false,
       "extra-files": [
         "src/minio/zarf.yaml",
-        {
-          "type": "yaml",
-          "path": "bundle/uds-bundle.yaml",
-          "jsonpath": "$.packages[0].ref"
-        }
-      ]
-    },
-    "src/postgres": {
-      "extra-files": [
         "src/postgres/zarf.yaml",
-        {
-          "type": "yaml",
-          "path": "bundle/uds-bundle.yaml",
-          "jsonpath": "$.packages[1].ref"
-        }
-      ]
-    },
-    "src/redis": {
-      "extra-files": [
         "src/redis/zarf.yaml",
-        {
-          "type": "yaml",
-          "path": "bundle/uds-bundle.yaml",
-          "jsonpath": "$.packages[2].ref"
-        }
+        "bundle/uds-bundle.yaml"
       ]
     }
-  }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }

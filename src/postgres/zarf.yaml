@@ -2,7 +2,9 @@
 kind: ZarfPackageConfig
 metadata:
   name: dev-postgres
-  version: "12.6.6-0"
+  # x-release-please-start-version
+  version: "0.0.0"
+  # x-release-please-end
   architecture: amd64
 
 variables:

@@ -2,23 +2,25 @@ kind: UDSBundle
 metadata:
   name: dependency-test
   description: A UDS bundle for deploying UDS dependencies on a development cluster
-  version: 0.1.0
+  # x-release-please-start-version
+  version: 0.0.0
+  # x-release-please-end
 
 packages:
   - name: dev-minio
     path: ../
     # x-release-please-start-version
-    ref: 5.0.13-0
+    ref: 0.0.0
     # x-release-please-end
 
   - name: dev-postgres
     path: ../
     # x-release-please-start-version
-    ref: 12.6.6-0
+    ref: 0.0.0
     # x-release-please-end
   
   - name: dev-redis
     path: ../
     # x-release-please-start-version
-    ref: 17.13.2-0
+    ref: 0.0.0
     # x-release-please-end
