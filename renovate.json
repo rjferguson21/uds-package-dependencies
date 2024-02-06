@@ -9,7 +9,7 @@
     "group:all",
     "replacements:all",
     "workarounds:all",
-    "github>defenseunicorns/uds-common-tasks//presets/zarf#562f6966dbdd1330d42437091d6c0c995ad5d89b"
+    "github>defenseunicorns/uds-common-tasks//presets/zarf#b7a9fde0f886cbbf995a06b4d7012bb08edeafa8"
   ],
   "timezone": "America/New_York",
   "rebaseStalePrs": true,
