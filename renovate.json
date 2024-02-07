@@ -1,25 +1,5 @@
 {
-  "enabled": true,
-  "forkProcessing": "enabled",
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":dependencyDashboard",
-    ":semanticPrefixFixDepsChoreOthers",
-    "config:base",
-    "group:all",
-    "replacements:all",
-    "workarounds:all",
-    "github>defenseunicorns/uds-common-tasks//presets/zarf#b7a9fde0f886cbbf995a06b4d7012bb08edeafa8"
-  ],
-  "timezone": "America/New_York",
-  "rebaseStalePrs": true,
-  "schedule": ["after 7am and before 9am every weekday"],
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "rebaseWhen": "conflicted",
-  "commitBodyTable": true,
-  "suppressNotifications": ["prIgnoreNotification"],
-  "pre-commit": {
-    "enabled": true
-  }
+    "github>rjferguson21/uds-renovate"
+  ]
 }
