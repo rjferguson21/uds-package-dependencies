@@ -17,6 +17,11 @@ components:
   - name: redis
     required: true
     charts:
+      - name: gitlab-runner
+        namespace: gitlab-runner
+        url: https://charts.gitlab.io
+        gitPath: chart
+        version: "0.61.0"
       - name: redis
         version: 17.13.2
         namespace: dev-redis
