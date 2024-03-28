@@ -29,7 +29,7 @@ components:
         valuesFiles:
           - "values.yaml"
     images:
-      - docker.io/bitnami/redis:7.0.12-debian-11-r2
+      - docker.io/bitnami/redis:7.2.4
     actions:
       onDeploy:
         after:
