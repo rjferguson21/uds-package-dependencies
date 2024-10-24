@@ -45,9 +45,9 @@ components:
         valuesFiles:
           - values/registry1-values.yaml
     images:
-      - "registry1.dso.mil/ironbank/gitlab/gitlab-runner/gitlab-runner:v16.8.0"
-      - "registry1.dso.mil/ironbank/gitlab/gitlab-runner/gitlab-runner-helper:v16.8.0"
-      - "registry1.dso.mil/ironbank/redhat/ubi/ubi9:9.3"
+      - "registry1.dso.mil/ironbank/gitlab/gitlab-runner/gitlab-runner:v17.2.1"
+      - "registry1.dso.mil/ironbank/gitlab/gitlab-runner/gitlab-runner-helper:v17.2.1"
+      - "registry1.dso.mil/ironbank/redhat/ubi/ubi9:9.4"
 
   - name: gitlab-runner
     required: true
@@ -69,6 +69,6 @@ components:
         valuesFiles:
           - values/upstream-values.yaml
     images:
-      - "registry.gitlab.com/gitlab-org/gitlab-runner:alpine-v16.8.0"
+      - "registry.gitlab.com/gitlab-org/gitlab-runner:v17.5.2"
       - "library/alpine:latest"
-      - "registry1.dso.mil/ironbank/gitlab/gitlab-runner/gitlab-runner-helper:v16.8.0"
+      - "registry1.dso.mil/ironbank/gitlab/gitlab-runner/gitlab-runner-helper:v17.2.1"
