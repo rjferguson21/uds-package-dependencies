@@ -25,7 +25,7 @@ components:
     required: true
     charts:
       - name: minio
-        version: 5.0.13
+        version: 5.3.0
         namespace: dev-minio
         url: https://charts.min.io/
         valuesFiles:
